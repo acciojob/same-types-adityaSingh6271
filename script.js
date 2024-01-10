@@ -1,9 +1,10 @@
 function isSameType(value1, value2) {
   if (isNaN(value1) && isNaN(value2)) {
-    return true;
-  } else {
-    return typeof value1 === typeof value2;
+    return true; // Both values are NaN
+  } else if (typeof value1 !== typeof value2) {
+    return false; // Types are not the same
   }
+  return true; // Types are the same (excluding NaN scenario)
 }
 
 // do not change the code below.
